@@ -46,11 +46,9 @@ async function scrap(clientId, gameIds) {
       const filteredData = response.data.filter(({type, viewer_count}) => type === 'live' && viewer_count >= MIN_VIEWERS_COUNT);
       data = data.concat(filteredData);
       cursor = response.pagination.cursor;
-      console.log("finished", cursor)
     } catch(e) {
       if(e.name === "StatusCodeError" && e.error.error === "Too Many Requests"){
         await delay(1000);
-        console.log('timeout')
       } else {
         throw(e);
       }
