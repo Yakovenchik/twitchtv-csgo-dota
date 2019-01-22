@@ -5,7 +5,6 @@ const gameIdsMap = Object.entries(config.GAMES_IDS).reduce(
         {}
     );
 
-console.log(gameIdsMap);
 async function getStreams(filter) {
     const results = await db.stream.findAll({
         where: { gameId: filter.gameId },

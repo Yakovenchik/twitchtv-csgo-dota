@@ -29,7 +29,7 @@ app.get('/csgo', async (req, res) => {
 });
 
 bootstrap().then(() => {
-  app.listen(3000, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log('listen')
   });
 });
