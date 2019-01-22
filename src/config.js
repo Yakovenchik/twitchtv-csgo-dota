@@ -5,6 +5,7 @@ module.exports = {
   GAMES_IDS: {csgo: 32399, dota: 29595},
   MIN_VIEWERS_COUNT: 100,
   db: {
+    url: process.env.DATABASE_URL,
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || '',

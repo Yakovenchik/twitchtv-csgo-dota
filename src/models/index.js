@@ -3,7 +3,7 @@ import path from 'path';
 import Sequelize from 'sequelize';
 import {db as dbConfig} from '../config';
 
-const sequelize = new Sequelize(dbConfig.database, dbConfig.user, dbConfig.password, {
+const sequelize = new Sequelize(dbConfig.url, {
   host: dbConfig.host,
   dialect: 'postgres',
   pool: {
