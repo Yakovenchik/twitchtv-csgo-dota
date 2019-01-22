@@ -21,11 +21,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/dota', async (req, res) => {
   const data = await streamService.getStreams({gameId: config.GAMES_IDS.dota});
-  res.send(`<pre>${JSON.stringify(data, null, 4)}</pre>`)
+  // res.send(`<pre>${JSON.stringify(data, null, 4)}</pre>`)
+  res.send(data)
 });
 app.get('/csgo', async (req, res) => {
   const data = await streamService.getStreams({gameId: config.GAMES_IDS.csgo});
-  res.send(`<pre>${JSON.stringify(data, null, 4)}</pre>`)
+  // res.send(`<pre>${JSON.stringify(data, null, 4)}</pre>`)
+  res.send(data)
 });
 
 bootstrap().then(() => {
